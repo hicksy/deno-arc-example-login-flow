@@ -1,8 +1,8 @@
-let arc = require('@architect/functions')
+import arcHttpAsync from 'https://raw.githubusercontent.com/hicksy/functions/architect-functions-deno/src/http/async/index.js'
 
 async function requireLogin(req) {
   console.log('state:', req.session)
-  if (req.session.isLoggedIn === false) {
+  if (req.session.isLoggedIn === false || typeof req.session.isLoggedIn === 'undefined') {
     console.log(`Attempt to access protected page without logging in!`)
     // Return a response, so middleware processing ends
     return {
@@ -26,4 +26,4 @@ async function showProtectedPage(request) {
   return { html }
 }
 
-exports.handler = arc.http.async(requireLogin, showProtectedPage)
+export const handler = arcHttpAsync(requireLogin, showProtectedPage)

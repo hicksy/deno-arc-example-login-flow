@@ -1,17 +1,13 @@
 {
-  "name": "arc-example-login-flow",
+  "name": "deno-arc-example-login-flow",
   "version": "1.0.0",
-  "author": "Brian LeRoux <b@brian.io>",
+  "author": "Martin Hicks, Brian LeRoux <b@brian.io>",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arc-repos/arc-example-login-flow"
+    "url": "https://github.com/hicksy/deno-arc-example-login-flow"
   },
   "scripts": {
-    "start": "sandbox"
-  },
-  "dependencies": {
-    "@architect/functions": "^3.13.10",
-    "@architect/sandbox": "latest"
+    "start": "arc sandbox"
   }
 }

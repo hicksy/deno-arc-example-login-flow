@@ -1,11 +1,12 @@
-let arc = require('@architect/functions')
+import arcHttpAsync from 'https://raw.githubusercontent.com/hicksy/functions/architect-functions-deno/src/http/async/index.js'
 
-async function route(request) {
-  let isLoggedIn = request.body.email === 'admin@example.com' && request.body.password === 'admin'
+async function route(req) {
+  console.log(JSON.stringify(req, null, 2));
+  let isLoggedIn = req.body.email === 'admin@example.com' && req.body.password === 'admin'
   return {
     session: { isLoggedIn },
     location: isLoggedIn ? '/protected' : '/'
   }
 }
 
-exports.handler = arc.http.async(route)
+export const handler = arcHttpAsync(route)

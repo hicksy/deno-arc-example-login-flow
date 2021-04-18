@@ -1,4 +1,4 @@
-let arc = require('@architect/functions')
+import arcHttpAsync from 'https://raw.githubusercontent.com/hicksy/functions/architect-functions-deno/src/http/async/index.js'
 
 async function route(request) {
   return {
@@ -7,4 +7,4 @@ async function route(request) {
   }
 }
 
-exports.handler = arc.http.async(route)
+export const handler = arcHttpAsync(route)

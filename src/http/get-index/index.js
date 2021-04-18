@@ -1,6 +1,8 @@
-let arc = require('@architect/functions')
+import arcHttpAsync from 'https://raw.githubusercontent.com/hicksy/functions/architect-functions-deno/src/http/async/index.js'
 
 async function route(req) {
+
+  console.log(JSON.stringify(req), null, 2);
 
   var loggedInPage = `
 	<h2>You're logged in</h2>
@@ -31,4 +33,4 @@ async function route(req) {
   }
 }
 
-exports.handler = arc.http.async(route)
+export const handler = arcHttpAsync(route)
