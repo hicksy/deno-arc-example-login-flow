@@ -1,4 +1,4 @@
-import arcHttpAsync from 'https://raw.githubusercontent.com/hicksy/functions/architect-functions-deno/src/http/async/index.js'
+import arc from 'https://raw.githubusercontent.com/hicksy/functions/architect-functions-deno/src/index.js'
 
 async function requireLogin(req) {
   console.log('state:', req.session)
@@ -26,4 +26,4 @@ async function showProtectedPage(request) {
   return { html }
 }
 
-export const handler = arcHttpAsync(requireLogin, showProtectedPage)
+export const handler = arc.http.async(requireLogin, showProtectedPage)
