@@ -3,7 +3,7 @@ loginflow
 
 @aws
 runtime deno
-#timeout 30
+timeout 30
 
 @http
 get /
