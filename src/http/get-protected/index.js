@@ -1,4 +1,4 @@
-import arc from 'https://raw.githubusercontent.com/hicksy/functions/architect-functions-deno/src/index.js'
+import arc from 'https://raw.githubusercontent.com/architect/functions-deno/main/src/index.js'
 
 async function requireLogin(req) {
   console.log('state:', req.session)
